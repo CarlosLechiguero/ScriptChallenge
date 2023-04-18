@@ -14,6 +14,7 @@ class VolteretaAdapter implements VolteretaInterface
     private string $service;
 
     private string $endPoint;
+    private array $responses;
 
     public function __construct(
         public readonly ReservationParse $reservationParse,
@@ -26,7 +27,7 @@ class VolteretaAdapter implements VolteretaInterface
     public function getReservation(Reservation ...$reservations)
     {
         foreach ($reservations as $reservation) {
-            $this->call(($this->reservationParse)($reservation));
+            $this->responses[] = $this->call(($this->reservationParse)($reservation));
         }
 
     }
@@ -48,10 +49,8 @@ class VolteretaAdapter implements VolteretaInterface
         ]);
 
         $response = curl_exec($curl);
-        dump($response);
-        die();
-
-
         curl_close($curl);
+
+        return $response;
     }
 }
