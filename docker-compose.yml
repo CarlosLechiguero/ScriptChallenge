@@ -1,0 +1,34 @@
+version: "3.3"
+services:
+  php:
+    container_name: challenge-php
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www
+    ports:
+      - 7445:80
+    working_dir: /var/www
+
+  composer:
+    container_name: challenge-composer
+    build:
+      context: ./docker/composer
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+    working_dir: /app
+
+  nginx:
+    container_name: challenge-nginx
+    image: nginx:stable-alpine
+    volumes:
+        - ./docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+        - 7446:80
+    environment:
+        PHP_HOST: php
+        PHP_PORT: 9000
+    links:
+        - php

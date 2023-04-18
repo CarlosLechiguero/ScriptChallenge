@@ -1,0 +1,29 @@
+# behat.yml
+default:
+  extensions:
+    FriendsOfBehat\SymfonyExtension:
+      bootstrap: vendor/autoload.php
+      kernel:
+        class: Challenge\SharedContext\Infrastructure\Resources\ChallengeApiKernel
+        path: src/SharedContext/Infrastructure/Resources/ChallengeApiKernel.php
+        environment: test
+        debug: ~
+  suites:
+    default:
+      contexts:
+        - Challenge\Tests\Behat\Contexts\ApiContext
+      paths:
+        - tests/Behat/Features
+    junior:
+      contexts: [Challenge\Tests\Behat\Contexts\ApiContext]
+      paths:
+        - tests/Behat/Features/e2e/Junior
+    mid:
+      contexts: [Challenge\Tests\Behat\Contexts\ApiContext]
+      paths:
+        - tests/Behat/Features/e2e/Junior
+        - tests/Behat/Features/e2e/Mid
+    senior:
+      contexts: [Challenge\Tests\Behat\Contexts\ApiContext]
+      paths:
+        - tests/Behat/Features/e2e/Senior
