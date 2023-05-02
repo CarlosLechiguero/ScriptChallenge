@@ -8,4 +8,6 @@ Clonar el repositorio
 
 `make install`
 
+`make start`
+
 Por navegador `http://localhost:7446/Script.php`

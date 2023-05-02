@@ -11,19 +11,12 @@ use Challenge\ScriptContext\Domain\ValueObject\Turn;
 
 class AllReservation
 {
-    /** @var Reservation[] */
-    private array $reservations;
-
-    public function __construct(
-
-    ){
-    }
-
     public function __invoke(): array
     {
         $restaurants = Restaurant::cases();
         $turns = Turn::cases();
         $peoples = Peoples::cases();
+        $reservations = [];
 
         foreach ($turns as $turn) {
             foreach ($restaurants as $restaurant) {

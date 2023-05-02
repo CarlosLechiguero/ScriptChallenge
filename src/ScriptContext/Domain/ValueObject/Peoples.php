@@ -3,9 +3,6 @@
 declare(strict_types=1);
 
 namespace Challenge\ScriptContext\Domain\ValueObject;
-use Challenge\ScriptContext\Domain\Exception\NumberPersonNotValidException;
-
-use Exception;
 
 Enum Peoples: string
 {

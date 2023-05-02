@@ -7,7 +7,6 @@ namespace Challenge\ScriptContext\Domain\Entity;
 use Challenge\ScriptContext\Domain\ValueObject\Peoples;
 use Challenge\ScriptContext\Domain\ValueObject\Restaurant;
 use Challenge\ScriptContext\Domain\ValueObject\Turn;
-use JMS\Serializer\SerializerInterface;
 
 class Reservation
 {
