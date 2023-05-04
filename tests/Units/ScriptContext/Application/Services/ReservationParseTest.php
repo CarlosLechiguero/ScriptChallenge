@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+namespace Challenge\Tests\Units\ScriptContext\Application\Services;
 
 use Challenge\ScriptContext\Application\Request\RequestVoltereta;
 use Challenge\ScriptContext\Application\Services\ReservationParse;

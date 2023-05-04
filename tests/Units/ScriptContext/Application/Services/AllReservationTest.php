@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Challenge\Tests\Units\ScriptContext\Application\Services;
+
 use Challenge\ScriptContext\Application\Services\AllReservation;
 use Challenge\ScriptContext\Domain\Entity\Reservation;
 use PHPUnit\Framework\TestCase;
